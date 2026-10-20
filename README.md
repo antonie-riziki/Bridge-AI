@@ -173,7 +173,7 @@ See [docs/AI_DISCLOSURE.md](docs/AI_DISCLOSURE.md).
 
 ## GitHub and demo
 
-- GitHub repository: not published from this workspace yet. Add the remote, then push `main`.
+- GitHub repository: https://github.com/antonie-riziki/Bridge-AI
 - Hosted demo URL: not deployed yet. Local command: `streamlit run app.py`.
 
 ## License
