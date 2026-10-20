@@ -28,11 +28,15 @@ If the live call fails, the pipeline returns `ANALYSIS_FAILED`. It does not subs
 
 ## Modules
 
-### `bridgeai/app.py`
+### `app.py` and `bridgeai/app.py`
 
-Renders the form, sample-scenario buttons, status, claims, conflicts, explanation, next step, and limitations. Session state keeps the text when a run fails. A previous result is hidden once the form changes, so an old check is not read as a result for new text.
+`app.py` sets the page config once and registers four sidebar pages. **Compare notices** is the default. It renders the form, sample-scenario buttons, status, claims, conflicts, explanation, next step, and limitations. Session state keeps the text when a run fails. A previous result is hidden once the form changes, so an old check is not read as a result for new text.
 
 The page does not put source text into HTML. Status colour is paired with a written label.
+
+### `bridgeai/ui/` and `bridgeai/services/places.py`
+
+**Places** lists location phrases from the same extractor used by the comparison. It does not send that text to a geocoder. A map pin exists only when the person enters both a latitude and a longitude, and those numbers are in range. **How to read a result** and **Limits** are static explanations. They do not run an analysis.
 
 ### `bridgeai/config.py`
 

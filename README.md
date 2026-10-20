@@ -35,8 +35,10 @@ sources → validation → deterministic comparison → optional live wording �
 
 | Module | Responsibility |
 | --- | --- |
-| `app.py` | Streamlit entry point (`streamlit run app.py`) |
-| `bridgeai/app.py` | Form, sample scenarios, result layout |
+| `app.py` | Streamlit entry point and sidebar (`streamlit run app.py`) |
+| `bridgeai/app.py` | Compare notices page: form, sample scenarios, result layout |
+| `bridgeai/ui/` | Places, how to read a result, and limits pages |
+| `bridgeai/services/places.py` | Place phrases and checks for coordinates the user already knows |
 | `bridgeai/config.py` | Environment settings. The API key is never displayed |
 | `bridgeai/schemas.py` | Pydantic models |
 | `bridgeai/services/evidence.py` | Date, time, place, and amount comparison |
@@ -67,6 +69,8 @@ streamlit run app.py
 ```
 
 The app binds to `0.0.0.0` so a hosted container can receive traffic. Locally, open the URL Streamlit prints (usually `http://localhost:8501`).
+
+The sidebar opens on **Compare notices**. The other pages are **Places**, **How to read a result**, and **Limits**. Places lists place phrases already extracted from the notices. It plots a pin only when you type a latitude and longitude you already know. It does not geocode the text.
 
 On a host that sets `PORT`:
 

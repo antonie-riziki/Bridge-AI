@@ -13,6 +13,7 @@ from bridgeai.services.agent import analyze_pairs
 from bridgeai.services.evidence import InputError
 from bridgeai.services.language import status_label
 from bridgeai.services.scenarios import SCENARIOS
+from bridgeai.ui.notices import remember_notices, seed_notice_widgets
 
 LANGUAGES = [
     ("English", Language.ENGLISH),
@@ -93,9 +94,7 @@ UI = {
 }
 
 
-def main() -> None:
-    st.set_page_config(page_title="BridgeAI", page_icon="B", layout="wide", initial_sidebar_state="collapsed")
-    _inject_css()
+def compare_page() -> None:
     _init_state()
 
     _header()
@@ -146,11 +145,8 @@ def _header() -> None:
 
 
 def _init_state() -> None:
+    seed_notice_widgets()
     defaults = {
-        "label_a": "Clinic announcement",
-        "text_a": "",
-        "label_b": "Community notice",
-        "text_b": "",
         "language_choice": "English",
         "reading_choice": "Simple — short sentences",
         "analysis_mode": "demo",
@@ -210,6 +206,7 @@ def _queue_scenario(scenario_id: str) -> None:
     st.session_state.label_b = scenario.label_b
     st.session_state.text_b = scenario.text_b
     st.session_state.queued_scenario = scenario_id
+    remember_notices()
 
 
 def _selectors(live: bool) -> tuple[Language, ReadingLevel]:
@@ -276,6 +273,7 @@ def _source_fields(language: Language) -> tuple[str, str, str, str]:
                 help="For example, a community notice. Up to 8000 characters.",
             )
             st.caption(f"{len(text_b)} / 8000 characters")
+    remember_notices()
     return label_a, text_a, label_b, text_b
 
 
@@ -473,7 +471,7 @@ def _fingerprint(
     return json.dumps(payload, sort_keys=True)
 
 
-def _inject_css() -> None:
+def inject_css() -> None:
     st.markdown(
         """
         <style>

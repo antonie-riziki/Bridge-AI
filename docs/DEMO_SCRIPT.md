@@ -12,7 +12,7 @@ Say: community notices do not always match. A clinic day can be 12 March in one 
 
 ### 0:20–0:45 — Open the app and choose a sample
 
-Show the title, the sentence about what BridgeAI can and cannot verify, and the demo banner. Point to the three sample buttons. Click **Run Conflicting outreach dates**. Do not type.
+The app opens on **Compare notices**. The sidebar also has Places, How to read a result, and Limits. Stay on Compare notices for the timed path. Show the title, the sentence about what BridgeAI can and cannot verify, and the demo banner. Point to the three sample buttons. Click **Run Conflicting outreach dates**. Do not type.
 
 ### 0:45–1:35 — Conflicting announcements and claims
 
