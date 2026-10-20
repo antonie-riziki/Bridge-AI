@@ -36,7 +36,7 @@ sources → validation → deterministic comparison → optional live wording �
 | Module | Responsibility |
 | --- | --- |
 | `app.py` | Streamlit entry point and sidebar (`streamlit run app.py`) |
-| `bridgeai/app.py` | Compare notices page: form, sample scenarios, result layout |
+| `bridgeai/compare.py` | Compare notices page: form, sample scenarios, result layout |
 | `bridgeai/ui/` | Places, how to read a result, and limits pages |
 | `bridgeai/services/places.py` | Place phrases and checks for coordinates the user already knows |
 | `bridgeai/config.py` | Environment settings. The API key is never displayed |

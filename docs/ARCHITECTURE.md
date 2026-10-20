@@ -28,7 +28,7 @@ If the live call fails, the pipeline returns `ANALYSIS_FAILED`. It does not subs
 
 ## Modules
 
-### `app.py` and `bridgeai/app.py`
+### `app.py` and `bridgeai/compare.py`
 
 `app.py` sets the page config once and registers four sidebar pages. **Compare notices** is the default. It renders the form, sample-scenario buttons, status, claims, conflicts, explanation, next step, and limitations. Session state keeps the text when a run fails. A previous result is hidden once the form changes, so an old check is not read as a result for new text.
 
